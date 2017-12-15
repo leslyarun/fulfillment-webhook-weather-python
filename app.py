@@ -16,6 +16,7 @@
 
 from __future__ import print_function
 from future.standard_library import install_aliases
+
 install_aliases()
 
 from urllib.parse import urlparse, urlencode
@@ -105,11 +106,35 @@ def makeWebhookResult(data):
     print(speech)
 
     return {
-        "speech": speech,
-        "displayText": speech,
-        # "data": data,
-        # "contextOut": [],
-        "source": "apiai-weather-webhook-sample"
+        "responseId": "samp1",
+        "queryResult": {
+
+            "queryText": speech,
+            "languageCode": "en",
+            "parameters": {},
+            "allRequiredParamsPresent": true,
+            "fulfillmentText": speech,
+            "fulfillmentMessages": [
+                {
+
+                    "text": {
+                        "text": [
+                            speech
+                        ]
+                    }
+                }
+            ],
+            "webhookSource": "apiai-weather-webhook-sample",
+
+            "intent": {
+                "name": "projects/tactii-dd365/agent/intents/21ad8ddd-a3df-4c3d-8cea-670c0eff0af2",
+                "displayName": "hooktest"
+            },
+            "intentDetectionConfidence": 1,
+            "diagnosticInfo": {},
+
+        }
+
     }
 
 
