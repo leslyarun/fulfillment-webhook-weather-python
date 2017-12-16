@@ -101,9 +101,9 @@ def makeWebhookResult(data):
     print(speech)
 
     return {
-        {
+
           "fulfillmentText": speech
-        }
+
 
     }
 
