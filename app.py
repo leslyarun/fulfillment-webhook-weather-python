@@ -14,11 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from __future__ import print_function
-from future.standard_library import install_aliases
-
-install_aliases()
-
 from urllib.parse import urlparse, urlencode
 from urllib.request import urlopen, Request
 from urllib.error import HTTPError
@@ -106,33 +101,8 @@ def makeWebhookResult(data):
     print(speech)
 
     return {
-        "responseId": "samp1",
-        "queryResult": {
-
-            "queryText": speech,
-            "languageCode": "en",
-            "parameters": {},
-            "allRequiredParamsPresent": true,
-            "fulfillmentText": speech,
-            "fulfillmentMessages": [
-                {
-
-                    "text": {
-                        "text": [
-                            speech
-                        ]
-                    }
-                }
-            ],
-            "webhookSource": "apiai-weather-webhook-sample",
-
-            "intent": {
-                "name": "projects/tactii-dd365/agent/intents/21ad8ddd-a3df-4c3d-8cea-670c0eff0af2",
-                "displayName": "hooktest"
-            },
-            "intentDetectionConfidence": 1,
-            "diagnosticInfo": {},
-
+        {
+          "fulfillmentText": speech
         }
 
     }
